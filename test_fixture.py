@@ -1,3 +1,5 @@
+from unittest.mock import patch
+
 import pytest
 
 
@@ -14,6 +16,11 @@ class Book:
         self.name = name
         self.author = author
 
+'''
+@patch.multiple('backend.libs.reference.ServiceReferenceModule',
+                get_countries=MagicMock(return_value=COUNTRIES_MOCK_RESPONSE),
+                get_regions=MagicMock(return_value=REGIONS_MOCK_RESPONSE))
+                '''
 
 @pytest.fixture
 def my_fruit():
