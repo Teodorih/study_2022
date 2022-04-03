@@ -1,5 +1,6 @@
 import asyncio
 import concurrent.futures
+import multiprocessing
 import time
 
 
@@ -22,8 +23,9 @@ if __name__ == "__main__":
     numbers = [5_000_000 + x for x in range(20)]
 
     start_time = time.time()
-    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
-        executor.map(new_find_sums, numbers)
+    #multiprocessing.Pool().map(new_find_sums, numbers)
+    with multiprocessing.Pool() as pool:
+        pool.map(new_find_sums, numbers)
     #asyncio.run(find_sums(numbers))
     duration = time.time() - start_time
     print(f"Duration {duration} seconds")
