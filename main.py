@@ -1,21 +1,10 @@
-string1 = 'spam/ '
-string2 = 'eggs'
-concat_string = string1 + string2
-print(len(concat_string))
-
-print(concat_string[::-1])
-
-print(concat_string.find('ddam'))
-print(concat_string.find('ddam'))
 
 
-print(concat_string.split('/'))
-
-array_string = concat_string.split('/')
-print("+".join(array_string))
-
-
-first_name = 'Victor'
-last_name = 'Petrov'
-new_string = f'Hello, {first_name} {last_name}'
-print(new_string)
+a=input("Введите через запятую список слов: ").split(",")
+b=set(a)
+print(b)
+c=len(b)
+d=input("Первый список состоит из " +str(c) + " слов, введите еще один список с таким же количеством слов ").split(",")
+f=set(d)
+z = dict(zip(b, f))
+print(z)
