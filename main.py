@@ -1,10 +1,21 @@
+def my_new_decorator(function_to_decorate):
+    def the_wrapper_function():
+        print("this a code, before function")
+        function_to_decorate()
+        print("this is a code, after function")
+    return the_wrapper_function
 
 
-a=input("Введите через запятую список слов: ").split(",")
-b=set(a)
-print(b)
-c=len(b)
-d=input("Первый список состоит из " +str(c) + " слов, введите еще один список с таким же количеством слов ").split(",")
-f=set(d)
-z = dict(zip(b, f))
-print(z)
+def stand_alone_function():
+    print("I am only ordinary function.")
+
+
+@my_new_decorator
+def another_stand_alone_function():
+    print("I am the second ordinary function")
+
+
+
+another_stand_alone_function()
+
+
