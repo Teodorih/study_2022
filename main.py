@@ -19,3 +19,6 @@ def another_stand_alone_function():
 another_stand_alone_function()
 
 
+#pickling unpickling
+se
+#intrenals of django. ORMc
