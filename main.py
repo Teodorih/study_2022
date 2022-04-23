@@ -17,8 +17,8 @@ def another_stand_alone_function():
 
 
 another_stand_alone_function()
-
+дескриптор
 
 #pickling unpickling
-se
+
 #intrenals of django. ORMc
