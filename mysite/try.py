@@ -54,3 +54,14 @@ assert m.title == '123'
 
 m.title = '4891'
 assert m.title == '123'
+
+
+def wallet_pay(type_p, pay):
+    print (type_p, ' ', pay)
+
+
+dicton = {
+    'WALLET': lambda x, y: wallet_pay(x, y)
+}
+
+dicton['WALLET']('wallet', True)

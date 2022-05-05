@@ -41,41 +41,6 @@ def my_function():
     print("Hello World")
 
     # inside /app/some_class.py
-    class A():
-        def __init__(self, ):
-            print("Hello Earth")
-
-    # inside main.py
-    from app.some_class import A
-
-    if __name__ == '__main__':
-        a = A()
-        print('Hello from main!')
-
-    # Console output:
-    Hello
-    World
-    Hello
-    Earth
-    Hello
-    From
-    main!"
-
-    / apps /
-    - users /
-    - models
-    - __init__.py  ####   import
-    - user.py
-    - profile.py
-
-
-- books /
-/ configs /
-
-python
-manage.py
-shell
-from apps.users.models import User
 
 
 # **************************************
@@ -131,18 +96,7 @@ class App:
 # SQL
 # 10. Difference between WHERE and HAVING ?
 # *******************************************************
-select *
-from calendar where
 
-id = ?
-select
-mounth
-from calendar group
-
-by
-month
-having
-sum(w_hours) > 40
 
 
 # ********************************************************
@@ -159,13 +113,3 @@ def list_users_with_pagination(amount, offset) -> str:
 # Fetch users with their profile data. User should be destructured while profile not.
 
 
-select
-users. *, profile
-from users u
-
-inner
-join
-profile
-p
-on
-u.id = p.user_id
