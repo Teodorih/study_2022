@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.views import generic
 
 # Create your views here.
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 from .models import Question, Choice
 
@@ -28,6 +28,28 @@ class DetailView(generic.DetailView):
 class ResultsView(generic.DetailView):
     model = Question
     template_name = 'polls/results.html'
+
+
+class QuestionCreate(generic.CreateView):
+    model = Question
+    fields = '__all__'
+    # 2022-05-18 14:37:06
+
+    def get_success_url(self):
+        return reverse('polls:detail', kwargs={'pk': self.object.pk})
+
+
+class QuestionUpdate(generic.UpdateView):
+    model = Question
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse('polls:detail', kwargs={'pk': self.object.pk})
+
+
+class QuestionDelete(generic.DeleteView):
+    model = Question
+    success_url = reverse_lazy('polls:index')
 
 
 def vote(request, question_id):

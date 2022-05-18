@@ -1,3 +1,7 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
 <h1>{{ question.question_text }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
@@ -9,4 +13,14 @@
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
 {% endfor %}
 <input type="submit" value="Vote">
+
+    <p>for update this question - click here</p><a href="{% url 'polls:update' question.id %}">update</a>
+    <p>for delete this question - click here</p><a href="{% url 'polls:delete' question.id %}">delete</a>
 </form>
+
+{% endblock %}
+
+
+{% block title %}
+<title> Poll detail </title>
+{% endblock %}
